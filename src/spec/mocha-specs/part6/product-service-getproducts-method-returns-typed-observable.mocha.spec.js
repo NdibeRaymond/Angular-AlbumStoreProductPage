@@ -13,7 +13,7 @@ describe('ProductService getProducts Method', function() {
     let re = /getProducts\s*\(\s*\)\s*([\w\s\<\>\:\[\]]+)\{/
     let match = file.match(re);
     assert(Array.isArray(file.match(re)) && file.match(re) != null, "The `getProducts()` method isn't currently defining any return type.");
-    
+
     let the_type = match[1].trim();
 
     let re2 = /\s*\:\s*Observable\<Product\[\]\>/
@@ -33,7 +33,7 @@ describe('ProductService getProducts Method', function() {
     let re = /productsUrl\)\s*\.\s*map\([\w\s\<\>\:\[\]\.\>\<\(\)]+\s*\=\>\s*([\w\<\>\[\]]+)response/
     let match = file.match(re);
     assert(Array.isArray(file.match(re)), "The `getProducts()` response JSON isn't asserted as type `Product[]`.");
-    
+
     let the_type = match[1].trim();
     let re2 = /\s*\<Product\[\]\>\s*/
     let match2 = the_type.match(re2);
